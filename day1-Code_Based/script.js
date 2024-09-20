@@ -42,4 +42,14 @@ function temperature(f){
     return (f - 32) * 5/9
 }
 
-console.log(temperature(50))
+// console.log(temperature(50))
+
+// 8. Write a function that accepts a string and returns it reversed.
+
+function reverseString(str) {
+    let strLength = str.length;
+    let reversedStr = "";
+    for (let i = strLength - 1; i >= 0; i--) {
+        reversedStr += str[i];
+        }
+}
