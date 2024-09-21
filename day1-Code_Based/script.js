@@ -52,4 +52,43 @@ function reverseString(str) {
     for (let i = strLength - 1; i >= 0; i--) {
         reversedStr += str[i];
         }
+        return reversedStr
 }
+
+//  9. Write a function that determines whether a given year is a leap year. 
+
+function leapyear(y){
+if(y%4 === 0 && (y%100 !== 0 || y%400 === 0)) {
+    return "Its a leap year";
+} else {
+    return "Not a leap year"
+}
+}
+
+console.log(leapyear(1700))
+
+//  10. Implement a calculator function that can handle addition, subtraction, multiplication, and division based on a passed operator.
+
+function calculator(num1,operator,num2){
+    switch (operator) {
+        case "+":
+            return num1 + num2;
+        case "-":
+            return num1 - num2;
+        case "*":
+            return num1 * num2;
+        case "/":
+            if(num2 !== 0){
+                return num1 / num2;
+            }else {
+                return "Error: Division by zero is not allowed"
+            }
+    
+        default:
+            return "Invalid operator"
+    }
+}
+
+console.log(calculator(3,"+", 3))
+
+console.log(Math.abs(3))
