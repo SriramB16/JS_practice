@@ -85,4 +85,42 @@ function getUnique(arr){
     return uniqueArr;
 }
 
-console.log(getUnique([1,2,3,1,2,5]))
+// console.log(getUnique([1,2,3,1,2,5]))
+
+//9.  Implement a function nestedSum that takes an array of arrays of numbers (e.g., [[1, 2, 3], [4, 5], [6]]) and returns the total sum of all numbers.
+
+function nestedSum(arr){
+    let sum = arr.map(nestArr => nestArr.reduce((total,sum) => total+= sum,0))
+    let totalSum = sum.reduce((total,sum) => total+=sum,0);
+    return totalSum
+}
+
+console.log(nestedSum([[1, 2, 3], [4, 5], [6]]))
+
+
+// 10. Write a function memoize that takes a function as input and returns a memoized version of it (i.e., a version that caches the results of function calls and reuses them when the same inputs occur).
+
+function memoize(fn){
+    let cache ={}
+
+    return function(...args){
+        let key = JSON.stringify(args);
+
+        if(cache[key]){
+            console.log("Fetching from cache:", key);
+            return cache[key];
+        }else {
+            console.log("Calculating result:", key);
+            let result = fn(...args);
+            cache[key] = result;
+            return result;
+        }
+    };
+}
+
+function addNum(...args){
+    return args.reduce((total,sum) => total + sum,0)
+}
+
+
+let memoizeAdd = memoize(addNum);
