@@ -69,7 +69,7 @@ function capitalizeWords(str){
 
 // console.log(capitalizeWords('this is sriram'))
 
-// 8. Write a function longestWord that takes a string and returns the longest word in the sentence.
+// 7. Write a function longestWord that takes a string and returns the longest word in the sentence.
 
 function longestWord(str){
     let words = str.split(' ');
